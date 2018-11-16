@@ -6,21 +6,15 @@ import math
 direction = './image/q2/'
 imgCount = 3
 color = ('b','g','r')
-g = [2.518, 2.518, 2.518]
+g = [2.098, 1.952, 1.966]
 
-# i250 = cv2.imread(direction+'ISO_100_T_250.jpg')
-# i125 = cv2.imread(direction+'ISO_100_T_125.jpg')
-# i30 = cv2.imread(direction+'ISO_100_T_30.jpg')
-# a1 = 2.0
-# a2 = 8.3
+i500 = cv2.imread(direction+'ISO_100_T_500.jpg')
+i250 = cv2.imread(direction+'ISO_100_T_250.jpg')
+i90 = cv2.imread(direction+'ISO_100_T_90.jpg')
+a1 = 50/25
+a2 = 50/9
 
-i250 = cv2.imread(direction+'1.jpg')
-i125 = cv2.imread(direction+'2.jpg')
-i30 = cv2.imread(direction+'3.jpg')
-a1 = 4425./1000
-a2 = 4425./350
-
-originalImageArr = [i250, i125, i30]
+originalImageArr = [i500, i250, i90]
 img_row = originalImageArr[0].shape[0]
 img_col = originalImageArr[0].shape[1]
 

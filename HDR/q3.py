@@ -6,14 +6,14 @@ import math
 direction = './image/q2/'
 imgCount = 3
 color = ('b','g','r')
-g = [2.0984317435303166, 1.952438298782427, 1.9665891131222188]
+g = [2.098, 1.952, 1.966]
 
+i500 = cv2.imread(direction+'ISO_100_T_500.jpg')
 i250 = cv2.imread(direction+'ISO_100_T_250.jpg')
-i125 = cv2.imread(direction+'ISO_100_T_125.jpg')
-i30 = cv2.imread(direction+'ISO_100_T_30.jpg')
-a1 = 2.0
-a2 = 25/3
-originalImageArr = [i250, i125, i30]
+i90 = cv2.imread(direction+'ISO_100_T_90.jpg')
+a1 = 50/25
+a2 = 50/9
+originalImageArr = [i500, i250, i90]
 
 #sampling a square
 imageArr = [0 for n in range(0, imgCount)]

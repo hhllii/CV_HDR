@@ -6,14 +6,14 @@ import math
 direction = './image/q2/'
 imgCount = 3
 color = ('b','g','r')
-g = [2.0984317435303166, 1.952438298782427, 1.9665891131222188]
+g = [2.098, 1.952, 1.966]
 
+i500 = cv2.imread(direction+'ISO_100_T_500.jpg')
 i250 = cv2.imread(direction+'ISO_100_T_250.jpg')
-i125 = cv2.imread(direction+'ISO_100_T_125.jpg')
-i30 = cv2.imread(direction+'ISO_100_T_30.jpg')
+i90 = cv2.imread(direction+'ISO_100_T_90.jpg')
 a1 = 2
 a2 = 25/3
-originalImageArr = [i250, i125, i30]
+originalImageArr = [i500, i250, i90]
 
 #sampling a square
 imageArr = [0 for n in range(0, imgCount)]
@@ -29,7 +29,7 @@ def hist_image_data(img, a):
 	return yAxis
 	
 #image1 plot
-yAxis = hist_image_data(i30, a2)
+yAxis = hist_image_data(i90, a2)
 plt.xlabel('B\'g')
 plt.ylabel('count')
 for idxColor in range(0,3):
@@ -39,7 +39,7 @@ for idxColor in range(0,3):
 	plt.grid(True)
 
 #image2 plot
-yAxis = hist_image_data(i125, a1)
+yAxis = hist_image_data(i250, a1)
   
 plt.xlabel('B\'g')
 plt.ylabel('count')
@@ -50,7 +50,7 @@ for idxColor in range(0,3):
 	plt.grid(True)
 
 #image3 plot
-yAxis = hist_image_data(i250, 1)
+yAxis = hist_image_data(i500, 1)
   
 plt.xlabel('B\'g')
 plt.ylabel('count')
